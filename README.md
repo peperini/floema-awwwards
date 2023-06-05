@@ -2,7 +2,7 @@
 
 <!-- [![Website Preview](preview.png)](https://your-website-url.com) -->
 
-This project is a re-build of an amazing website that was featured as the Site of the Day on awwwards.com. The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
+This project is a re-build of an amazing website that was featured as the Site of the Day on awwwards.com by Luca Franceschetti and Luis Henrique Bizarro [Website Link](https://floema.jewelry/). The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
 
 ## Demo
 
@@ -12,7 +12,7 @@ Check out the live demo of the re-built website: TBD<!-- [Demo Link](https://you
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/JoseArmandoFelix/cercas-humaya.git`
+1. Clone the repository: `git clone https://github.com/JoseArmandoFelix/floema-awwwards.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 
