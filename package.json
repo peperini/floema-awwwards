@@ -1,0 +1,20 @@
+{
+  "name": "floema-awwwards",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --progress --config webpack.config.build.js",
+    "development": "webpack serve --progress --config webpack.config.development.js ",
+    "start": "npm run development"
+  },
+  "author": "Jose Armando Felix",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "webpack": "^5.85.1",
+    "webpack-cli": "^5.1.3",
+    "webpack-dev-server": "^4.15.0",
+    "webpack-merge": "^5.9.0"
+  }
+}
