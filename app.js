@@ -10,15 +10,15 @@ app.get('/', (req, res) => {
     res.render('pages/home')
 })
 
-app.get('/collections', (req, res) => {
-    res.render('pages/collections')
+app.get('/collection', (req, res) => {
+    res.render('pages/collection')
 })
 
 app.get('/about', (req, res) => {
     res.render('pages/about')
 })
 
-app.get('/details/:id', (req, res) => {
+app.get('/details/:uid', (req, res) => {
     res.render('pages/details')
 })
 
