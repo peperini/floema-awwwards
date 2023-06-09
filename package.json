@@ -34,8 +34,11 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
+    "@prismicio/client": "^5.1.0",
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "nodemon": "^2.0.22",
+    "prismic-dom": "^2.2.7",
     "pug": "^3.0.2"
   }
 }
