@@ -41,30 +41,29 @@ app.get('/collection', (req, res) => {
     res.render('pages/collection')
 })
 
-app.get('/about', (req, res) => {
-    initApi(req).then(api => {
-        api.query(
-            Prismic.Predicates.any('document.type', ['about','about'])
-        ).then(response => {
-            const { results } = response
-            const [ about, meta ] = results
+app.get('/about', async (req, res) => {
+    const api = await initApi(req)
+    const about = await api.getSingle('about')
+    const meta = await api.getSingle('meta')
 
-            console.log(about.data.body)
-
-//            about.data.gallery.forEach(media => {
-//                console.log(media)
-//            })
-
-            res.render('pages/about', {
-                about,
-                meta
-            })
-        })
+    res.render('pages/about', {
+        about,
+        meta
     })
 })
 
-app.get('/details/:uid', (req, res) => {
-    res.render('pages/details')
+app.get('/details/:uid', async (req, res) => {
+    const api = await initApi(req)
+    const meta = await api.getSingle('meta')
+    const product = await api.getByUID('product', req.params.uid, {
+        fetchLinks: 'collection.title'
+    })
+
+    console.log(product.highlights)
+    res.render('pages/details', {
+        meta,
+        product
+    })
 })
 
 app.listen(port, () => {

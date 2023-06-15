@@ -4,4 +4,22 @@ block variables
     - var template = 'details'
 
 block content
-    h1.details__title Details
+    .detail
+        .detail__wrapper
+            figure.detail__media
+                img.detail__media__image(alt=product.data.image.alt src=product.data.image.url)
+
+            .detail__information
+                p.detail__information__collection=product.data.collection.data.title
+
+                h1.detail__information__title=product.data.title
+
+                .detail__information__content
+                    .detail__information__highlight
+                        each highlight in product.data.highlights
+                            p.detail__information__highlight
+                                svg.detail__information__highlight__icon
+                                    use(xlink:href=highlights.highlight_icon)
+
+                                | #{highlights.highlight_text}
+
