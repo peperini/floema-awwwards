@@ -19,7 +19,15 @@ block content
                         each highlight in product.data.highlights
                             p.detail__information__highlight
                                 svg.detail__information__highlight__icon
-                                    use(xlink:href=highlights.highlight_icon)
+                                    use(xlink:href=`sprite-${highlight.highlight_icon.toLowerCase()}`)
 
-                                | #{highlights.highlight_text}
+                                span.detail__information__highlight__text=highlight.highlight_text
+
+                    .detail__information__list
+                        each item in product.data.information
+                            p.detail__information__item
+                                strong.detail__information__item__title=item.information_label
+                                span.detail__information__item__description=item.information_description
+
+                    a.detail__information__link(href=product.data.link_url.url target='_blank')=product.data.link_text
 
