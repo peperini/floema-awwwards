@@ -1,0 +1,18 @@
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/vendors';
+
+
+@import './base/reset';
+
+@import './pages/about/about';
+@import './pages/about/content';
+@import './pages/about/gallery';
+@import './pages/about/highlight';
+
+@import './pages/collections/collections';
+
+@import './pages/details/details';
+
+@import './pages/home/home';
