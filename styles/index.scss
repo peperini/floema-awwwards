@@ -3,8 +3,9 @@
 @import 'utils/mixins';
 @import 'utils/vendors';
 
-
+@import './base/fonts';
 @import './base/reset';
+@import './base/base';
 
 @import './pages/about/about';
 @import './pages/about/content';
