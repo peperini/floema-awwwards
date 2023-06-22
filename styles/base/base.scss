@@ -1,3 +1,7 @@
+*, *:after, *:before  {
+    box-sizing: border-box;
+}
+
 html {
     font-size: calc(100vw / 1920 * 10);
 }
@@ -10,4 +14,14 @@ body {
     @include media('<phone') {
         font-size: 100px;
     }
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    vertical-align: middle;
 }
