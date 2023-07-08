@@ -24,7 +24,12 @@
 }
 
 .about__highlight__title {
-    transform: rotate(90deg);
+    @extend %title-200;
+
+    transform: translate(-50%, -50%) rotate(-90deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .about__highlight__media {
