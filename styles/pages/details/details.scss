@@ -101,3 +101,20 @@
     margin-top: 3rem;
     display: inline-block;
 }
+
+.detail__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.4rem;
+    height: 6rem;
+    position: absolute;
+    left: 50%;
+    bottom: 5rem;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.detail__button__icon {
+    @extend %cover;    
+}

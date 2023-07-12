@@ -5,6 +5,26 @@
     background: $color-contessa;
     color: $color-quarter-spanish-white;
     text-align: center;
+
+    &:after,
+    &:before {
+        content: '';
+        height: 24rem;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &:after {
+        background: linear-gradient(to bottom, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+        top: 0;
+    }
+
+    &::before {
+        background: linear-gradient(to top, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+        bottom: 0;
+    }
 }
 
 .home__wrapper {
@@ -49,4 +69,9 @@
     position: absolute;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
+    z-index: 2;
+}
+
+.home__link__icon {
+    @extend %cover;
 }

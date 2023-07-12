@@ -4,6 +4,7 @@
 
 html {
     font-size: calc(100vw / 1920 * 10);
+    line-height: 1;
 }
 
 body {
@@ -20,6 +21,14 @@ a {
     outline: none;
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
 }
 
 img {
