@@ -1,5 +1,10 @@
 .home {
-    
+    @extend %center;
+    @extend %cover;
+
+    background: $color-contessa;
+    color: $color-quarter-spanish-white;
+    text-align: center;
 }
 
 .home__wrapper {
@@ -7,23 +12,23 @@
 }
 
 .home__titles {
-
+	@extend %vertical-titles;
 }
 
 .home__titles__label {
-
+	@extend %vertical-titles__label;
 }
 
 .home__titles__title {
-
+	@extend %vertical-titles__title;
 }
 
 .home__gallery {
-
+    @extend %cover;
 }
 
 .home__gallery__media {
-
+    position: absolute;
 }
 
 .home__gallery__media__image {
@@ -31,5 +36,17 @@
 }
 
 .home__link {
+    @extend %description-14;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28.8rem;
+    height: 6rem;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
 }

@@ -15,12 +15,23 @@
     margin: auto;
     width: 144rem;
     position: relative;
+
+    .about__highlight:nth-child(4) & {
+        width: 104rem;
+    }
 }
 
 .about__highlight__label {
     @extend %description-12;
 
     text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 9rem;
+    transform: translateX(-50%);
+    width: 9.6rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
 }
 
 .about__highlight__title {
@@ -30,12 +41,18 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    padding-bottom: 2rem;
 }
 
 .about__highlight__media {
     height: 76rem;
     position: absolute;
     width: 54rem;
+
+    .about__highlight:nth-child(4) & {
+        height: 52.8rem;
+        width: 36rem;
+    }
 
     &:first-child {
         left: 0;
