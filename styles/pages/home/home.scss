@@ -4,6 +4,7 @@
 
     background: $color-contessa;
     color: $color-quarter-spanish-white;
+    overflow: hidden;
     text-align: center;
 
     &:after,
@@ -44,6 +45,7 @@
 }
 
 .home__gallery {
+    visibility: hidden;
     @extend %cover;
 }
 
@@ -70,6 +72,12 @@
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     z-index: 2;
+
+    @include media('<phone') {
+        bottom: 7.5rem;
+        height: 13.7rem;
+        width: 55rem;
+    }
 }
 
 .home__link__icon {

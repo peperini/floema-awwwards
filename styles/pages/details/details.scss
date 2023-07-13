@@ -18,7 +18,7 @@
         display: block;
         margin: auto;
         width: 66.1958rem;
-        padding: 31.5rem 0;
+        padding: 15rem 0 31.5rem;
     }
 }
 
@@ -137,6 +137,8 @@
 }
 
 .detail__button {
+    @extend %description-14;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +149,12 @@
     bottom: 5rem;
     transform: translateX(-50%);
     z-index: 2;
+
+    @include media('<phone') {
+        width: 26.8rem;
+        height: 13rem;
+        bottom: 12rem;
+    }
 }
 
 .detail__button__icon {
