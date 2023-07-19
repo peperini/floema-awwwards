@@ -90,6 +90,10 @@
 	display: flex;
 	position: absolute;
 	bottom: 5rem;
+
+	@include media('>phone') {
+		display: none;
+	}
 }
 
 .collections__mobile__item {
