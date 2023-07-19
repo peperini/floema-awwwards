@@ -5,7 +5,13 @@ import Home from 'pages/Home'
 
 class App {
     constructor () {
-        console.log('App')
+        this.createContent()
+        this.createPages()
+    }
+
+    createContent () {
+        this.content = document.querySelector('.content')
+        this.template = this.content.getAttribute('data-template')
     }
 
     createPages () {
@@ -16,7 +22,9 @@ class App {
             home: new Home()
         }
 
-        console.log(this.pages)
+        this.page = this.pages[this.template]
+        this.page.create()
+        this.page.show()
     }
 }
 
