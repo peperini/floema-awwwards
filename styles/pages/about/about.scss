@@ -1,4 +1,6 @@
 .about {
+    @extend %page;
+    
     background: $color-cadet-blue;
     color: $color-bright-gray;
     opacity: 0;
@@ -14,7 +16,7 @@
     margin: auto;
     max-width: 124rem;
     text-align: center;
-
+    
     @include media('<phone') {
         max-width: 67.7rem;
     }

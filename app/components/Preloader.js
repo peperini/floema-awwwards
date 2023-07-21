@@ -33,14 +33,14 @@ export default class Preloader extends Component {
         this.createLoader()
     }
 
-    createLoader() {
+    createLoader () {
         each(this.elements.images, element => {
             element.onload = () => this.onAssetLoaded(element)
             element.src = element.getAttribute('data-src')
         })
     }
 
-    onAssetLoaded(image) {
+    onAssetLoaded (image) {
         this.length += 1
 
         const percent = this.length / this.elements.images.length
@@ -52,7 +52,7 @@ export default class Preloader extends Component {
         }
     }
 
-    onLoaded() {
+    onLoaded () {
         return new Promise(resolve => {
             this.animateOut = GSAP.timeline({
                 delay: 2
@@ -87,7 +87,7 @@ export default class Preloader extends Component {
         })
     }
 
-    destroy() {
+    destroy () {
         this.element.parentNode.removeChild(this.element)
     }
 }
