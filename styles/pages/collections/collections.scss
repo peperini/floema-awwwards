@@ -1,8 +1,8 @@
 .collections {
 	@extend %page;
 	
-	background: $color-quicksand;
-	color: $color-quarter-spanish-white;
+	// background: $color-quicksand;
+	// color: $color-quarter-spanish-white;
 }
 
 .collections__wrapper {
@@ -87,12 +87,12 @@
 }
 
 .collections__mobile {
-	display: flex;
+	display: none;
 	position: absolute;
 	bottom: 5rem;
 
-	@include media('>phone') {
-		display: none;
+	@include media('<phone') {
+		display: flex;
 	}
 }
 
