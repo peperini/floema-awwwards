@@ -5,6 +5,9 @@ import Prefix from 'prefix'
 import normalizeWheel from 'normalize-wheel'
 
 import Title from 'animations/Title'
+import Paragraph from 'animations/Paragraph'
+import Label from 'animations/Label'
+import Highlight from 'animations/Highlight'
 
 export default class Page {
     constructor ({ 
@@ -15,7 +18,11 @@ export default class Page {
         this.selector = element
         this.selectorChildren = {
             ...elements,
-            animationTitles: '[data-animation="title"]'
+
+            animationHighlights: '[data-animation="highlight"]',
+            animationTitles: '[data-animation="title"]',
+            animationParagraphs: '[data-animation="paragraph"]',
+            animationLabels: '[data-animation="label"]'
         }
 
         this.id = id
@@ -54,13 +61,43 @@ export default class Page {
     }
 
     createAnimations () {
-        console.log(this.elements.animationTitles)
+        this.animations = []
+
+        // Highlights
+        this.animationHighlights = map(this.elements.animationHighlights, element => {
+            return new Highlight({
+                element
+            })
+        })
+
+        this.animations.push(...this.animationHighlights)
         
+        // Titles
         this.animationTitles = map(this.elements.animationTitles, element => {
             return new Title({
                 element
             })
         })
+
+        this.animations.push(...this.animationTitles)
+
+        // Paragraphs
+        this.animationParagraphs = map(this.elements.animationParagraphs, element => {
+            return new Paragraph({
+                element
+            })
+        })
+
+        this.animations.push(...this.animationParagraphs)
+
+        // Labels
+        this.animationLabels = map(this.elements.animationLabels, element => {
+            return new Label({
+                element
+            })
+        })
+
+        this.animations.push(...this.animationLabels)
     }
 
     show () {
@@ -105,7 +142,7 @@ export default class Page {
             this.scroll.limit = this.elements.wrapper.clientHeight - window.innerHeight
         }
 
-        each(this.animationTitles, animation => animation.onResize())
+        each(this.animations, animation => animation.onResize())
     }
 
     update () {
