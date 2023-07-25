@@ -8,7 +8,7 @@ export default class Detail extends Page {
 
             element: '.detail',
             elements: {
-                button: 'detail__button'
+                button: '.detail__button'
             }
         })
     }

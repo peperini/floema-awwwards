@@ -14,6 +14,8 @@ export default class Component extends EventEmitter {
         }
 
         this.create()
+
+        this.addEventListeners()
     }
 
     create () {
@@ -38,5 +40,13 @@ export default class Component extends EventEmitter {
                 this.elements[key] = document.querySelector(entry)
             } 
         })
+    }
+
+    addEventListeners () {
+
+    }
+
+    removeEventListeners () {
+        
     }
 }
