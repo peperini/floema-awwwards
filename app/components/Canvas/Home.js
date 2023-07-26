@@ -4,11 +4,14 @@ import map from 'lodash/map'
 import Media from './Media'
 
 export default class {
-    constructor ({ gl, scene }) {
+    constructor ({ gl, scene, sizes }) {
         this.gl = gl
-        this.group = new Transform()
+        this.sizes = sizes;
         
-        this.medias = document.querySelectorAll('.home__gallery__media__image')
+        this.group = new Transform()
+
+        
+        this.mediaElements = document.querySelectorAll('.home__gallery__media__image')
 
         this.createGeometry()
         this.createGallery()
@@ -21,14 +24,20 @@ export default class {
     }
 
     createGallery () {
-        map(this.medias, (element, index) => {
+        this.medias = map(this.mediaElements, (element, index) => {
             return new Media({
                 element,
                 geometry: this.geometry,
                 index,
                 gl: this.gl,
-                scene: this.group
+                scene: this.group,
+                sizes: this.sizes
+
             })
         })
+    }
+
+    onResize (event) {
+        map(this.medias, media => media.onResize(event))
     }
 }

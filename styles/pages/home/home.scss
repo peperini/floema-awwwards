@@ -47,6 +47,8 @@
 .home__gallery {
     @extend %cover;
 
+    visibility: hidden;
+
     width: 245.7539rem;
     height: 178.2012rem;
 }
