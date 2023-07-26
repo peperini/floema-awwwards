@@ -45,16 +45,125 @@
 }
 
 .home__gallery {
-    visibility: hidden;
     @extend %cover;
+
+    width: 245.7539rem;
+    height: 178.2012rem;
 }
 
 .home__gallery__media {
     position: absolute;
+
+    &:nth-child(1) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 22.4;
+        left: 9.58;
+    }
+
+    &:nth-child(2) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 25.2rem;
+        left: 54.3rem;
+    }
+
+    &:nth-child(3) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 16.7rem;
+        left: 107rem;
+    }
+
+    &:nth-child(4) {
+        width: 45.9rem;
+        height: 65.7rem;
+        top: 0;
+        left: 153rem;
+    }
+
+    &:nth-child(5) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 16.7rem;
+        left: 207rem;
+    }
+
+    &:nth-child(6) {
+        width: 39.2537rem;
+        height: 52.3451rem;
+        top: 75rem;
+        left: 0;
+    }
+
+    &:nth-child(7) {
+        width: 47rem;
+        height: 62.65rem;
+        top: 71.1rem;
+        left: 46.3rem;
+    }
+
+    &:nth-child(8) {
+        width: 43.6762rem;
+        height: 58.2425rem;
+        top: 70.5rem;
+        left: 101rem;
+    }
+
+    &:nth-child(9) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 69.8rem;
+        left: 160rem;
+    }
+
+    &:nth-child(10) {
+        width: 43.6762rem;
+        height: 58.2425rem;
+        top: 70.5rem;
+        left: 202rem;
+    }   
+
+    &:nth-child(11) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 135rem;
+        left: 13.3rem;
+    }
+
+    &:nth-child(12) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 136rem;
+        left: 54.3rem;
+    }
+
+    &:nth-child(13) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 134rem;
+        left: 106rem;
+    }
+
+    &:nth-child(14) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 117rem;
+        left: 164rem;
+    }
+
+    &:nth-child(15) {
+        width: 31.3679rem;
+        height: 41.8293rem;
+        top: 134rem;
+        left: 207rem;
+    }
 }
 
 .home__gallery__media__image {
+    @extend %cover;    
 
+    opacity: 1;
 }
 
 .home__link {
