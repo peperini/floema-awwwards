@@ -45,6 +45,7 @@ export default class {
     
         this.mesh.setParent(this.scene)
     }
+    
 
     createBounds ({ sizes }) {
         this.sizes = sizes
@@ -55,6 +56,16 @@ export default class {
         this.updateX()
         this.updateY() 
     }
+    
+
+    // Events
+
+    onResize (sizes) {
+        this.createBounds(sizes)
+    }
+
+
+    // Loop
 
     updateScale () {
         this.height = this.bounds.height / window.innerHeight
@@ -62,25 +73,24 @@ export default class {
 
         this.mesh.scale.x = this.sizes.width * this.width
         this.mesh.scale.y = this.sizes.height * this.height
-
-        this.x = this.bounds.left / window.innerWidth
-        this.y = this.bounds.top / window.innerHeight
     }
 
     updateX (x = 0) {
+        this.x = (this.bounds.left + x) / window.innerWidth
+
         this.mesh.position.x = (-this.sizes.width / 2) + (this.mesh.scale.x / 2) + (this.x * this.sizes.width)
     }
 
     updateY (y = 0) {
+        this.y = (this.bounds.top + y) / window.innerHeight
+
         this.mesh.position.y = (this.sizes.height / 2) - (this.mesh.scale.y / 2) - (this.y * this.sizes.height)
     }
 
     update (scroll) {
+        if (!this.bounds) return
+
         this.updateX(scroll.x)
         this.updateY(scroll.y)
-    }
-
-    onResize (sizes) {
-        this.createBounds(sizes)
     }
 }

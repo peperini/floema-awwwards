@@ -27,7 +27,9 @@ export default class Canvas {
     }
 
     createRenderer () {
-        this.renderer = new Renderer()
+        this.renderer = new Renderer({
+            alpha: true
+        })
 
         this.gl = this.renderer.gl
 
@@ -85,11 +87,10 @@ export default class Canvas {
 
         if (this.home) {
             this.home.onTouchDown({
-                x: this.x.start,
-                y: this.y.start
+                x: this.x,
+                y: this.y
             })
         }
-        console.log('down', x, y)
     }
 
     onTouchMove (event) {
@@ -98,28 +99,42 @@ export default class Canvas {
         const x = event.touches ? event.touches[0].clientX : event.clientX
         const y = event.touches ? event.touches[0].clientY : event.clientY
 
+        this.x.end = x
+        this.y.end = y
+
         if (this.home) {
-            this.home.onTouchDown({ x, y })
+            this.home.onTouchMove({
+                x: this.x,
+                y: this.y
+            })
         }
-        console.log('move', x, y)
     }
 
     onTouchUp (event) {
         this.isDown = false
 
-        const x = event.touches ? event.touches[0].clientX : event.clientX
-        const y = event.touches ? event.touches[0].clientY : event.clientY
+        const x = event.changedTouches ? event.changedTouches[0].clientX : event.clientX
+        const y = event.changedTouches ? event.changedTouches[0].clientY : event.clientY
+
+        this.x.end = x
+        this.y.end = y
 
         if (this.home) {
-            this.home.onTouchDown({ x, y })
+            this.home.onTouchMove({
+                x: this.x,
+                y: this.y
+            })
         }
-        console.log('up', x, y)
     }
 
 
     // Loop
 
     update () {
+        if (this.home) {
+            this.home.update( )
+        }
+
         this.renderer.render({
             camera: this.camera,
             scene: this.scene
