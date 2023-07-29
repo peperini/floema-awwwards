@@ -25,6 +25,7 @@ export default class Canvas {
         this.createScene()
 
         this.onResize()
+
         this.onRouteUpdate(this.template)
     }
 

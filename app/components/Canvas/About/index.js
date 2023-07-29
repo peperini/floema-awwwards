@@ -8,7 +8,7 @@ import Gallery from './Gallery'
 export default class {
     constructor ({ gl, scene, sizes }) {
         this.gl = gl
-        this.sizes = sizes;
+        this.sizes = sizes
         
         this.group = new Transform()
 
@@ -23,9 +23,9 @@ export default class {
     }
 
     createGalleries () {
-        this.galerriesElements = document.querySelectorAll('.about__gallery')
+        this.galleriesElements = document.querySelectorAll('.about__gallery')
 
-        this.galleries = map(this.galerriesElements, (element, index) => {
+        this.galleries = map(this.galleriesElements, (element, index) => {
             return new Gallery({
                 element,
                 geometry: this.geometry,

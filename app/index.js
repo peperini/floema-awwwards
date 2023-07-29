@@ -12,10 +12,11 @@ import Navigation from 'components/Navigation'
 
 class App {
     constructor () {
-        this.createNavigation()
-        this.createPreloader()
-        this.createCanvas()
         this.createContent()
+
+        this.createPreloader()
+        this.createNavigation()
+        this.createCanvas()
         this.createPages()
 
         this.addEventListeners()

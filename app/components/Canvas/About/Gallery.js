@@ -43,7 +43,7 @@ export default class Gallery {
         })
     }
 
-    // Events 
+    // Events
 
     onResize (event) {
         this.bounds = this.element.getBoundingClientRect()
@@ -82,7 +82,7 @@ export default class Gallery {
         } else if (this.scroll.current > this.scroll.target) {
             this.direction = 'left'
         }
-
+        
         this.scroll.current = GSAP.utils.interpolate(this.scroll.current, this.scroll.target, this.scroll.lerp)
 
         map(this.medias, (media, index) => {
