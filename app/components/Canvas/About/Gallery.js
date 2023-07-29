@@ -8,6 +8,8 @@ import Media from './Media'
 export default class Gallery {
     constructor ({ element, geometry, index, gl, scene, sizes }) {
         this.element = element
+        this.elementWrapper = element.querySelector('.about__gallery__wrapper')
+
         this.geometry = geometry
         this.index = index
         this.gl = gl
@@ -17,9 +19,9 @@ export default class Gallery {
         this.group = new Transform()
 
         this.scroll = {
+            start: 0,
             current: 0,
             target: 0,
-            last: 0,
             lerp: 0.1
         }
 
@@ -31,7 +33,7 @@ export default class Gallery {
     createMedias () {
         this.mediasElements = this.element.querySelectorAll('.about__gallery__media')
         
-        this.media = map(this.mediasElements, (element, index) => {
+        this.medias = map(this.mediasElements, (element, index) => {
             return new Media({
                 element,
                 geometry: this.geometry,
@@ -43,10 +45,21 @@ export default class Gallery {
         })
     }
 
+    // Animations
+
+    show () {
+        map(this.medias, media => media.show())
+    }
+
+    hide () {
+        map(this.medias, media => media.hide())
+
+    }
+
     // Events
 
     onResize (event) {
-        this.bounds = this.element.getBoundingClientRect()
+        this.bounds = this.elementWrapper.getBoundingClientRect()
 
         this.sizes = event.sizes
         
@@ -54,17 +67,17 @@ export default class Gallery {
 
         this.scroll.current = this.scroll.target = 0
 
-        map(this.medias, media => media.onResize(event, this.scroll))
+        map(this.medias, media => media.onResize(event, this.scroll.current))
     }
 
     onTouchDown ({ x, y }) {
-        this.scroll.current = this.scroll
+        this.scroll.start = this.scroll.current
     }
 
     onTouchMove ({ x, y }) {
-        const distance = x.start - x.end
+        const distance = x.start - x.end 
 
-        this.scroll.target = this.scroll.current - distance
+        this.scroll.target = this.scroll.start - distance 
     }
 
     onTouchUp ({ x, y }) {
@@ -92,21 +105,25 @@ export default class Gallery {
                 const x = media.mesh.position.x + scaleX
 
                 if (x < -this.sizes.width / 2) {
-                    media.extra.x += this.gallerySizes.width
-
-                    media.mesh.rotation.z = GSAP.utils.random(-Math.PI * 0.02, Math.PI * 0.02)
+                    media.extra += this.width
                 }
             } else if (this.direction === 'right') {
                 const x = media.mesh.position.x - scaleX
 
                 if (x > this.sizes.width / 2) {
-                    media.extra.x -= this.gallerySizes.width
-                    
-                    media.mesh.rotation.z = GSAP.utils.random(-Math.PI * 0.02, Math.PI * 0.02)
+                    media.extra -= this.width
                 }
             }
+            
+            media.update(this.scroll.current)
 
-            media.update(this.scroll)
+            // media.mesh.position.y = Math.cos((media.mesh.position.x / this.width) * Math.PI) * 1 - 1
         })
+    }
+
+    // Destroy
+
+    destroy () {
+        this.scene.removeChild(this.group)
     }
 }
