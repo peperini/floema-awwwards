@@ -2,11 +2,11 @@
 
 <!-- [![Website Preview](preview.png)](https://your-website-url.com) -->
 
-This project is a re-build of an amazing website that was featured as the Site of the Day on awwwards.com by Luca Franceschetti and Luis Henrique Bizarro [Website Link](https://floema.jewelry/). The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
+This project is a re-build of an amazing website that was featured as Site of the Day on awwwards.com by Luca Franceschetti and Luis Henrique Bizarro [Website Link](https://floema.jewelry/). The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
 
 ## Demo
 
-Check out the live demo of the re-built website: TBD<!-- [Demo Link](https://your-website-url.com) -->
+Check out the live demo of the re-built website here: WIP<!-- [Demo Link](https://your-website-url.com) -->
 
 ## Installation
 
@@ -24,13 +24,16 @@ To run this project locally, follow these steps:
 - Express
 - Prismic
 - GSAP
-- OGL
+- Lodash
+- WebGL (with OGL)
+- GLSL
+- Webpack
 
 ## Features and Functionality
 
 - Interactive animations
 - Responsive design for different screen sizes
-- Smooth transitions and scroll effects
+- Smooth transitions and scroll effects and interactions
 - Optimized performance and loading times
 
 ## Usage Guide
@@ -46,6 +49,6 @@ This project is licensed under the [MIT License](LICENSE.md).
 
 ## Contact
 
-If you have any questions or suggestions regarding this project, feel free to reach out to me:
+If you have any questions or comments regarding this project, feel free to reach out to me:
 
 - Email: josearmando.zara@gmail.com
