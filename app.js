@@ -143,7 +143,8 @@ app.get('/details/:uid', async (req, res) => {
     })
 
     res.render('pages/details', {
-        ...defaults
+        ...defaults,
+        product
     })
 })
 
