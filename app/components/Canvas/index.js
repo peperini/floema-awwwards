@@ -26,8 +26,6 @@ export default class Canvas {
         this.createScene()
 
         this.onResize()
-
-        this.onChangeEnd(this.template)
     }
 
     createRenderer () {
@@ -106,6 +104,10 @@ export default class Canvas {
 
     // Events
 
+    onPreloaded () {
+        this.onChangeEnd(this.template)
+    }
+
     onChangeStart () {
         if (this.about) {
             this.about.hide()
@@ -128,10 +130,8 @@ export default class Canvas {
         }
 
         if (template === 'collections') {
-            this.gl.canvas.style.zIndex = 1000
             this.createCollections()
         } else {
-            this.gl.canvas.style.zIndex = ''
             this.destroyCollections()
         }
 

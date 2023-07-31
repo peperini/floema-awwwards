@@ -1,7 +1,5 @@
 import Animation from 'classes/Animation';
 import GSAP from 'gsap'
-import { calculate, split } from 'utils/text'
-import each from 'lodash/each'
 
 export default class Highlight extends Animation {
     constructor ({ element, elements}) {
@@ -9,26 +7,15 @@ export default class Highlight extends Animation {
             element,
             elements
         })
-        
-        this.elementLinesSpans = split({ 
-            append: true,
-            element: this.element
-        })
     }
 
     animateIn () {
-        this.timelineIn = GSAP.timeline({
-            delay: 0.5
-        })
-
-        this.timelineIn.fromTo(this.element, {
+        GSAP.fromTo(this.element, {
             autoAlpha: 0,
-            scale: 1.2
+            delay: 0.5
         }, {
             autoAlpha: 1,
-            duration: 1.5,
-            ease: 'expo.out',
-            scale: 1
+            duration: 1
         })
     }
 
@@ -36,9 +23,5 @@ export default class Highlight extends Animation {
         GSAP.set(this.element, {
             autoAlpha: 0
         })
-    }
-
-    onResize () {
-        this.elementLines = calculate(this.elementLinesSpans)
     }
 }

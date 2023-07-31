@@ -33,7 +33,7 @@ export default class Gallery {
 
     createMedias () {
         this.mediasElements = this.element.querySelectorAll('.about__gallery__media')
-        
+
         this.medias = map(this.mediasElements, (element, index) => {
             return new Media({
                 element,

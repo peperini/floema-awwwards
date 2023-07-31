@@ -13,14 +13,16 @@ import Navigation from 'components/Navigation'
 class App {
     constructor () {
         this.createContent()
-
+        
+        this.createCanvas()
         this.createPreloader()
         this.createNavigation()
-        this.createCanvas()
         this.createPages()
 
         this.addEventListeners()
         this.addLinkListeners()
+
+        this.onResize()
 
         this.update()
     }
@@ -32,7 +34,10 @@ class App {
     }
 
     createPreloader () {
-        this.preloader = new Preloader()
+        this.preloader = new Preloader({
+            canvas: this.canvas
+        })
+
         this.preloader.once('completed', this.onPreloaded.bind(this))
     }
 
@@ -60,9 +65,9 @@ class App {
     }
 
     onPreloaded () {
-        this.preloader.destroy()
-
         this.onResize()
+
+        this.canvas.onPreloaded()
 
         this.page.show()
     }
