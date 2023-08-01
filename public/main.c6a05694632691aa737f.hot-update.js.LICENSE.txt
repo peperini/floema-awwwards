@@ -1,11 +1,3 @@
-/*! gsap */
-
-/*! ogl */
-
-/*! shaders/plane-fragment.glsl */
-
-/*! shaders/plane-vertex.glsl */
-
 /*!****************************************************!*\
   !*** ./app/components/Canvas/Collections/Media.js ***!
   \****************************************************/

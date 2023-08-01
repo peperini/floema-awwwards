@@ -1,7 +1,7 @@
 import { Mesh, Program} from 'ogl'
 import GSAP from 'gsap'
-import vertex from 'shaders/plane-vertex.glsl'
-import fragment from 'shaders/plane-fragment.glsl'
+import vertex from 'shaders/collections-vertex.glsl'
+import fragment from 'shaders/collections-fragment.glsl'
 
 export default class {
     constructor ({ element, geometry, gl, index, scene, sizes }) {
@@ -126,14 +126,11 @@ export default class {
         this.updateX(scroll)
         this.updateY()
 
-        if (this.index === 0) {
-            this.opacity.target = this.index === index ? 1 : 0.42
 
-            this.opacity.current = GSAP.utils.interpolate(this.opacity.current, this.opacity.target, this.opacity.lerp)
+        this.opacity.target = this.index === index ? 1 : 0.42
 
-            console.log(this.opacity.current)
+        this.opacity.current = GSAP.utils.interpolate(this.opacity.current, this.opacity.target, this.opacity.lerp)
 
-            this.program.uniforms.uAlpha.value = this.opacity.current * this.opacity.multiplier
-        }  
+        this.program.uniforms.uAlpha.value = this.opacity.current * this.opacity.multiplier  
     }
 }
