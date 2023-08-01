@@ -8,6 +8,8 @@ import Media from './Media'
 
 export default class {
     constructor ({ gl, scene, sizes }) {
+        this.id = 'collections'
+
         this.gl = gl
         this.scene = scene
         this.sizes = sizes

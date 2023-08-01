@@ -104,7 +104,7 @@ export default class Page {
     }
 
     createPreloader () {
-        this.preloader = map (this.elements.preloaders, element => {
+        this.preloader = map(this.elements.preloaders, element => {
             return new AsyncLoad({ element })
         })
     }

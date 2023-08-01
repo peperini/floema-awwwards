@@ -5,9 +5,9 @@ import fragment from 'shaders/collections-fragment.glsl'
 
 export default class {
     constructor ({ element, geometry, gl, index, scene, sizes }) {
-        this.element = element,
-        this.geometry = geometry,
-        this.gl = gl,
+        this.element = element
+        this.geometry = geometry
+        this.gl = gl
         this.index = index
         this.scene = scene
         this.sizes = sizes
