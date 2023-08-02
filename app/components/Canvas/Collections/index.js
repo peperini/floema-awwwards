@@ -7,12 +7,13 @@ import map from 'lodash/map'
 import Media from './Media'
 
 export default class {
-    constructor ({ gl, scene, sizes }) {
+    constructor ({ gl, scene, sizes, transition }) {
         this.id = 'collections'
 
         this.gl = gl
         this.scene = scene
         this.sizes = sizes
+        this.transition = transition
 
         this.tranformPrefix = Prefix('transform')
         
@@ -38,6 +39,10 @@ export default class {
 
         this.createGeometry()
         this.createGallery()
+
+        this.onResize({
+            sizes: this.sizes
+        })
 
         this.group.setParent(this.scene)
 
@@ -65,6 +70,12 @@ export default class {
     // Animations
 
     show () {
+        if (this.transition) {
+            this.transition.animate(this.medias[0].mesh, () => {
+
+            })
+        } 
+
         map(this.medias, media => media.show())
     }
 
@@ -129,8 +140,6 @@ export default class {
     // Update
 
     update () {
-        if (!this.bounds) return
-
         this.scroll.target = GSAP.utils.clamp(-this.scroll.limit, 0, this.scroll.target)
 
         this.scroll.current = GSAP.utils.interpolate(this.scroll.current, this.scroll.target, this.scroll.lerp)

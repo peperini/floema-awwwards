@@ -111,20 +111,24 @@ export default class Page {
 
     //Animations
 
-    show () {
+    show (animation) {
         return new Promise(resolve => {
             colorsManager.change({
                 backgroundColor: this.element.getAttribute('data-background'),
                 color: this.element.getAttribute('data-color')
             })
 
-            this.animationIn = GSAP.timeline()
+            if (animation) {
+                this.animationIn = animation
+            } else {
+                this.animationIn = GSAP.timeline()
 
-            this.animationIn.fromTo(this.element, {
-                autoAlpha: 0
-            }, {
-                autoAlpha: 1,
-            })
+                this.animationIn.fromTo(this.element, {
+                    autoAlpha: 0
+                }, {
+                    autoAlpha: 1,
+                })
+            }            
 
             this.animationIn.call(() => {
                 this.addEventListeners()
@@ -147,11 +151,8 @@ export default class Page {
         })
     }
 
-    // Events
 
-    onWheel ({ pixelY }) {
-        this.scroll.target += pixelY
-    }
+    // Events
 
     onResize () {
         if (this.elements.wrapper) {
@@ -160,6 +161,11 @@ export default class Page {
 
         //each(this.animations, animation => animation.onResize())
     }
+
+    onWheel ({ pixelY }) {
+        this.scroll.target += pixelY
+    }
+
 
     // Loop
 

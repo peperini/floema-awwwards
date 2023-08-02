@@ -94,7 +94,8 @@ export default class Canvas {
         this.collections = new Collections({
             gl: this.gl,
             scene: this.scene,
-            sizes: this.sizes
+            sizes: this.sizes,
+            transition: this.transition
         })
     }
 

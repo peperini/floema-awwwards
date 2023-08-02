@@ -19,6 +19,9 @@ export default class {
         this.createTexture()
         this.createProgram()
         this.createMesh()
+        this.createBounds({
+            sizes: this.sizes
+        })
 
         this.show()
     }
@@ -65,8 +68,12 @@ export default class {
 
     show () {
         if (this.transition) {
-            this.transition.animate(() => {
+            this.transition.animate(this.mesh, () => {
                 this.program.uniforms.uAlpha.value = 1
+            })
+        } else {
+            GSAP.to(this.program.uniforms.uAlpha, {
+                value: 1
             })
         }
     }
@@ -120,9 +127,14 @@ export default class {
     }
 
     update () {
-        if (!this.bounds) return
-
         this.updateX()
         this.updateY()
+    }
+
+
+    // Destroy
+
+    destroy () {
+        this.scene.removeChild(this.mesh)
     }
 }

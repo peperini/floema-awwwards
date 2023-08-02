@@ -46,43 +46,48 @@ export default class {
     // Element
 
     setElement (element) {
-        console.log(element.id)
-
         if (element.id === 'collections') {
             const { index, medias } = element
             const media = medias[index]
 
-            console.log(media)
-
             this.createProgram(media.texture)
             this.createMesh(media.mesh)
+
+            this.transition = 'detail'
         } else {
             this.createProgram(element.texture)
-            this.createMesh(element)
+            this.createMesh(element.mesh)
+
+            this.transition = 'collections'
         }
     }
 
 
     // Animations
 
-    animate (element, onComplete, flag) {
-        if(this.transition === 'detail') {
-            GSAP.to(this.mesh.scale, {
-                duration: 1.5,
-                ease: 'expo.inOut',
-                x: element.mesh.scale.x,
-                y: element.mesh.scale.y,
-                z: element.mesh.scale.z
-            })
-            
-            GSAP.to(this.mesh.position, {
-                duration: 1.5,
-                ease: 'expo.inOut',
-                onComplete,
-                x: element.mesh.position.x,
-                y: element.mesh.position.y,
-                z: element.mesh.position.z
-            })
-        }
+    animate (element, onComplete) {
+        const timeline = GSAP.timeline({
+            onComplete
+        })
+
+        timeline.to(this.mesh.scale, {
+            duration: 1.5,
+            ease: 'expo.inOut',
+            x: element.scale.x,
+            y: element.scale.y,
+            z: element.scale.z
+        }, 0)
+        
+        timeline.to(this.mesh.position, {
+            duration: 1.5,
+            ease: 'expo.inOut',
+            x: element.position.x,
+            y: element.position.y,
+            z: element.position.z
+        }, 0)
+
+        timeline.call(() => {
+            this.scene.removeChild(this.mesh)
+        })
     }
 }

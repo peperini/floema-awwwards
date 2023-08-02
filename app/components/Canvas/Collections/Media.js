@@ -12,10 +12,6 @@ export default class {
         this.scene = scene
         this.sizes = sizes
 
-        this.createTexture()
-        this.createProgram()
-        this.createMesh()
-
         this.extra = {
             x: 0,
             y: 0
@@ -27,6 +23,13 @@ export default class {
             lerp: 0.1,
             multiplier: 0
         }
+
+        this.createTexture()
+        this.createProgram()
+        this.createMesh()
+        this.createBounds({
+            sizes: this.sizes
+        })
     }
 
     createTexture () {
@@ -121,8 +124,6 @@ export default class {
     }
 
     update (scroll, index) {
-        if (!this.bounds) return
-
         this.updateX(scroll)
         this.updateY()
 
