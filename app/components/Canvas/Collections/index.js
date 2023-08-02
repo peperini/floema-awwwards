@@ -69,19 +69,37 @@ export default class {
 
     // Animations
 
-    show () {
+    async show () {
         if (this.transition) {
-            this.transition.animate(this.medias[0].mesh, () => {
+            const { src } = this.transition.mesh.program.uniforms.tMap.value.image
+            const texture = window.TEXTURES[src]
+            const media = this.medias.find(media => media.texture === texture)
+            const scroll = -media.bounds.left - media.bounds.width / 2 + window.innerWidth / 2
 
-            })
-        } 
+            this.update()
+        
+            this.transition.animate({
+                position: { x: 0, y: media.mesh.position.y, z: 0 },
+                rotation: media.mesh.rotation,
+                scale: media.mesh.scale
+            }, () => {
+                media.opacity.multiplier = 1
 
-        map(this.medias, media => media.show())
+                map(this.medias, item => {
+                    if (media !== item) {
+                        item.show()
+                    }
+                })
+
+                this.scroll.current = this.scroll.target = this.scroll.start = this.scroll.last = scroll
+            })  
+        } else {
+            map(this.medias, media => media.show())
+        }
     }
 
     hide () {
         map(this.medias, media => media.hide())
-
     }
 
 
@@ -156,7 +174,7 @@ export default class {
 
         const index = Math.floor((Math.abs(this.scroll.current - (this.medias[0].bounds.width / 2)) / this.scroll.limit) * (this.medias.length - 1))
 
-        if (this.index != index) {
+        if (this.index !== index) {
             this.onChange(index)
         }
 

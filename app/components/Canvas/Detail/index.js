@@ -49,6 +49,8 @@ export default class {
             program: this.program,
             geometry: this.geometry
         })
+
+        this.mesh.rotation.z = Math.PI * 0.01
     
         this.mesh.setParent(this.scene)
     }
@@ -79,7 +81,9 @@ export default class {
     }
 
     hide () {
-        
+        GSAP.to(this.program.uniforms.uAlpha, {
+            value: 0
+        })
     }
     
 
