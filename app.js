@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 const Prismic = require('@prismicio/client')
 const PrismicDOM = require('prismic-dom')
+const uap = require('ua-parser-js');
 
 const initApi = req => {
     return Prismic.getApi(process.env.PRISMIC_ENDPOINT, {
@@ -28,11 +29,11 @@ const initApi = req => {
 }
 
 const handleLinkResolver = doc => {
-    if (doc.type == 'product') {
+    if (doc.type === 'product') {
         return `/details/${doc.slug}`
     }
 
-    if (doc.type == 'collections') {
+    if (doc.type === 'collections') {
         return '/collections'
     }
 
@@ -47,6 +48,12 @@ const handleLinkResolver = doc => {
 
 
 app.use((req, res, next) => {
+    const ua = uap(req.headers['user-agent'])
+
+    res.locals.isDesktop = ua.device.type === undefined
+    res.locals.isPhone = ua.device.type === 'mobile'
+    res.locals.isTablet = ua.device.type === 'tablet'
+
     res.locals.Link = handleLinkResolver
 
     res.locals.Numbers = index => {
