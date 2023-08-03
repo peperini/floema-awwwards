@@ -2,17 +2,18 @@
 
 <!-- [![Website Preview](preview.png)](https://your-website-url.com) -->
 
-This project is a re-build of an amazing website that was featured as Site of the Day on awwwards.com by Luca Franceschetti and Luis Henrique Bizarro [Website Link](https://floema.jewelry/). The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
+This project is a rebuild of an amazing website that was featured as Site of the Day on awwwards.com by Luca Franceschetti and Luis Henrique Bizarro [Website Link](https://floema.jewelry/). The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
 
 ## Demo
 
-Check out the live demo of the re-built website here: WIP<!-- [Demo Link](https://your-website-url.com) -->
+Check out the live demo of the rebuilt website on Digital Ocean: [Demo Link](http://138.197.212.64/)
 
 ## Installation
 
 To run this project locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/JoseArmandoFelix/floema-awwwards.git`
+2. Add `.env` file to the project folder
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 
@@ -28,6 +29,7 @@ To run this project locally, follow these steps:
 - WebGL (with OGL)
 - GLSL
 - Webpack
+- Digital Ocean
 
 ## Features and Functionality
 
