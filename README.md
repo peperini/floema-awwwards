@@ -12,7 +12,7 @@ This project is a rebuild of an amazing website that was featured as Site of the
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/JoseArmandoFelix/floema-awwwards.git`
+1. Clone the repository: `git clone https://github.com/peperini/floema-awwwards.git`
 2. Add `.env` file to the project folder
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
