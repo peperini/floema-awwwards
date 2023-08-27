@@ -1,12 +1,12 @@
 # Creative Website Re-build Project
 
-<!-- [![Website Preview](preview.png)](https://your-website-url.com) -->
-
 This project is a rebuild of an amazing website that was featured as Site of the Day on awwwards.com by Luca Franceschetti and Luis Henrique Bizarro [Website Link](https://floema.jewelry/). The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
+
+[![Website Preview](floema-preview.mp4)](https://your-website-url.com)
 
 ## Demo
 
-Check out the live demo of the rebuilt website on Digital Ocean: [Demo Link](http://138.197.212.64/)
+[See it live on Digital Ocean](http://138.197.212.64/)
 
 ## Installation
 
@@ -38,19 +38,12 @@ To run this project locally, follow these steps:
 - Smooth transitions and scroll effects and interactions
 - Optimized performance and loading times
 
-## Usage Guide
-
-1. Explore the homepage to get an overview of the website's content.
-2. Navigate through different sections using the menu or scroll.
-3. Interact with interactive elements and animations to experience the website fully.
-4. Visit specific pages or sections to view detailed information.
-
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contact
 
 If you have any questions or comments regarding this project, feel free to reach out to me:
 
-- Email: josearmando.zara@gmail.com
+- Email: josearmando@gothier.co
