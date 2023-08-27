@@ -2,7 +2,7 @@
 
 This project is a rebuild of an amazing website that was featured as Site of the Day on awwwards.com by Luca Franceschetti and Luis Henrique Bizarro [Website Link](https://floema.jewelry/). The goal of this project is to showcase my web design and development skills and recreate the visual and interactive elements of the original website.
 
-[![Website Preview](floema-preview.mp4)](https://your-website-url.com)
+https://github.com/peperini/floema-awwwards/assets/42049554/4cfd23d1-8636-42e1-b915-14537aa8182b
 
 ## Demo
 
