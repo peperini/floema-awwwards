@@ -12,10 +12,34 @@ https://github.com/peperini/floema-awwwards/assets/42049554/4cfd23d1-8636-42e1-b
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/peperini/floema-awwwards.git`
-2. Add `.env` file to the project folder
-2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
+1. Clone the repository: 
+
+```sh
+git clone https://github.com/peperini/floema-awwwards.git
+```
+
+2. Add your `.env` environment variables file to the project folder
+
+Your .env file should contain:
+
+```sh
+PRISMIC_REPOSITORY=
+PRISMIC_ACCESS_TOKEN=
+```
+
+Ensure these are properly set to connect with Prismic services.
+
+3. Install dependencies:
+
+```sh
+npm install
+```
+
+4. Start the development server:
+
+```sh
+npm start
+```
 
 ## Technologies Used
 
