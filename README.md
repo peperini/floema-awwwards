@@ -8,7 +8,7 @@ https://github.com/peperini/floema-awwwards/assets/42049554/4cfd23d1-8636-42e1-b
 
 [See it live on Digital Ocean](http://138.197.212.64/)
 
-[See it live on Vercel](http://138.197.212.64/)
+[See it live on Vercel](https://floema-awwwards.vercel.app/)
 
 ## Installation
 
