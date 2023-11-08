@@ -6,9 +6,9 @@ https://github.com/peperini/floema-awwwards/assets/42049554/4cfd23d1-8636-42e1-b
 
 ## Demo
 
-[See it live on Digital Ocean](http://138.197.212.64/){:target="_blank"}
+[See it live on Digital Ocean](http://138.197.212.64/)
 
-[See it live on Vercel](https://floema-awwwards.vercel.app/){:target="_blank"}
+[See it live on Vercel](https://floema-awwwards.vercel.app/)
 
 ## Installation
 
